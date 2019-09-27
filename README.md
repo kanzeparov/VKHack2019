@@ -76,5 +76,5 @@ We implemented all this within the framework of the hackathon CryptoBazar Serial
 
 # Команда
 
-[![N|Solid](image/Team.png)](http://startblock.online)
+[![N|Solid](images/Team.png)](http://startblock.online)
 
