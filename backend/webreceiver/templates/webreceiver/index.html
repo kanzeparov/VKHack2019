@@ -55,6 +55,7 @@
   <table class="table is-bordered is-striped is-fullwidth sortable">
       <tr>
         <th>Promise ID</th>
+        <th>Owner</th>
         <th>Description</th>
         <th>Metrics</th>
         <th>Category</th>
@@ -67,6 +68,7 @@
       {% for promise in promise_list %}
       <tr>
         <td><p>{{ promise.promiseid }}</p></td>
+        <td><p>{{ promise.userid }}</p></td>
         <td><p>{{ promise.description }}</p></td>
         <td><p>{{ promise.metrics }}</p></td>
         <td><p>{{ promise.category }}</p></td>
@@ -84,14 +86,14 @@
       <tr>
         <th>Payment ID</th>
         <th>Sender</th>
-        <th>Receiver</th>
+        <th>Promise ID</th>
         <th>Amount</th>
       </tr>
       {% for payment in payment_list %}
       <tr>
         <td><p>{{ payment.paymentid }}</p></td>
         <td><p>{{ payment.sender }}</p></td>
-        <td><p>{{ payment.receiver }}</p></td>
+        <td><p>{{ payment.promiseid }}</p></td>
         <td><p>{{ payment.amount }}</p></td>
        </tr>
       {% endfor %}

@@ -16,9 +16,10 @@ if len(sys.argv) != 2:
 
 for user_id in range(1):
     payload = {
-        "promiseid": randomString(20),
-        "description" : "Как меня зовут?",
-        "userid": 346
+        "paymentid": randomString(20),
+        "sender" : 345,
+        "promiseid": "ZQvdKyZAcYQMruSUpMct",
+        "amount" : 1000
     }
     print(payload)
-    r = requests.post("http://" + sys.argv[1] + "/submitpromise", json=payload)
+    r = requests.post("http://" + sys.argv[1] + "/submitpayment", json=payload)

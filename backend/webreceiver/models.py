@@ -25,5 +25,5 @@ class Promises(models.Model):
 class Payments(models.Model):
         paymentid = models.TextField(default="")
         sender = models.BigIntegerField(default=0)
-        receiver = models.BigIntegerField(default=0)
+        promiseid = models.TextField(default="")
         amount = models.BigIntegerField(default=0)

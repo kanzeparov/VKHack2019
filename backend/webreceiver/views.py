@@ -36,9 +36,32 @@ def submitpromise(request):
 def db_add_promise(promiseid, desc, userid):
 	r = Promises(promiseid=promiseid, userid=int(userid), description=desc, transactions=[])
 	r.save()
-	selected_promises = Users.objects.filter(userid=userid)[0].promises
+	if (Users.objects.filter(userid=userid)):
+		selected_promises = Users.objects.filter(userid=userid)[0].promises
+	else:
+		selected_promises = []
 	selected_promises.append(promiseid)
 	r = Users(userid=int(userid), promises=selected_promises)
+	r.save()
+
+@csrf_exempt
+def submitpayment(request):
+	data = json.loads(request.body)
+	db_add_payment(data['paymentid'], data['sender'], data['promiseid'],
+				   data['amount'])
+	response = HttpResponse('OK', content_type='application/json')
+	return response
+
+def db_add_payment(paymentid, sender, promiseid, amount):
+	r = Payments(paymentid=paymentid, sender=int(sender), promiseid=promiseid, amount=amount)
+	r.save()
+	promise = Promises.objects.filter(promiseid=promiseid)[0]
+	selected_transactions = Promises.objects.filter(promiseid=promiseid)[0].transactions
+	selected_transactions.append(paymentid)
+	r = Promises(userid=promise.userid, promiseid=promise.promiseid, description=promise.description,
+				 metrics=promise.metrics, category=promise.category,
+				 wall_pub=promise.wall_pub, story_pub=promise.story_pub, exp_date=promise.exp_date,
+				 pub_date=promise.pub_date, transactions=selected_transactions)
 	r.save()
 
 def load(request):
