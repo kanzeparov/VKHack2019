@@ -16,3 +16,8 @@ connect.send('VKWebAppInit');
 // registerServiceWorker();
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+const sc = document.createElement("script");
+sc.setAttribute("src", "https://widget.cloudpayments.ru/bundles/cloudpayments");
+sc.setAttribute("type", "text/javascript");
+document.head.appendChild(sc);

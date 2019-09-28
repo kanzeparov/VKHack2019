@@ -23,7 +23,8 @@ class PromiseLayout extends React.Component {
 
                 <FormLayout>
                     <div style={{marginLeft: 12}}>Представь публично свой challendge. (Чем глобальнее цель, тем больше поддержки)</div>
-                    <Tooltip isShown={this.state.promiseTooltipShown}
+                    <Tooltip onClose={() => {}}
+                             isShown={this.state.promiseTooltipShown}
                              text="Например, я ставлю цель пробежать 100 км в течение месяца и похудеть на 3 кг. Я хочу быть здоровым и сократить риск возникновения инсульта.">
                         <Textarea onFocus={() => {this.setState({...this.state, promiseTooltipShown: true})}}
                                   onBlur={() => {this.setState({...this.state, promiseTooltipShown: false})}}
@@ -31,7 +32,8 @@ class PromiseLayout extends React.Component {
                                   placeholder="Обещание"/>
                     </Tooltip>
                     <div style={{marginLeft: 12}}>По каким измеримым показателям я гарантирантирую выполнение</div>
-                    <Tooltip isShown={this.state.promiseMerkTooltipShown}
+                    <Tooltip onClose={() => {}}
+                             isShown={this.state.promiseMerkTooltipShown}
                              text="Например, выложу в приложении скрины всех треков пробежки, а также буду записывать строис после каждой пробежки ">
 
                         <Textarea onFocus={() => {this.setState({...this.state, promiseMerkTooltipShown: true})}}
@@ -49,8 +51,11 @@ class PromiseLayout extends React.Component {
                     </Select>
 
                     <div style={{marginLeft: 12}}>Где хотите опубликовать</div>
-                    <Checkbox>На стене</Checkbox>
-                    <Checkbox>В сторис</Checkbox>
+
+                    <div style={{display: 'flex'}}>
+                        <Checkbox>На стене</Checkbox>
+                        <Checkbox>В сторис</Checkbox>
+                    </div>
 
                     <Button size="xl">Создать обещание</Button>
                 </FormLayout>

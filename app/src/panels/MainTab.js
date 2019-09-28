@@ -3,7 +3,7 @@ import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import {Tabs, TabsItem} from '@vkontakte/vkui'
 
 const MainTab = ({id, clickTab}) => (
-    <Panel theme="light">
+    <Panel theme="white">
         <Tabs theme="header" type="default">
             <TabsItem selected={true}>
                 Главная
