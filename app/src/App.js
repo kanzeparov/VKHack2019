@@ -42,7 +42,7 @@ const App = () => {
     function getActiveTab() {
 
         if (activeTab === 0) {
-            return <PromiseLayout/>
+            return <PromiseLayout user={fetchedUser}/>
         }
 
         if (activeTab === 1) {
@@ -59,11 +59,9 @@ const App = () => {
     const header = false;
 
     return (
-        <View theme="brand" header={false} popout={popout} activePanel="tabs">
-            <Panel theme="white" id="tabs">
-                <Div>
-                    <Home id='home' fetchedUser={fetchedUser} go={go}/>
-                </Div>
+        <View header={false} popout={popout} activePanel="tabs">
+            <Panel id="tabs">
+                <Home id='home' fetchedUser={fetchedUser} go={go}/>
                     <Panel theme="white">
                         <Tabs theme="header" type="buttons">
                             <HorizontalScroll>

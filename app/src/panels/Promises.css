@@ -1,5 +1,10 @@
 .List {
     background: rgb(237, 238, 240);
-    z-index: 3;
-    padding: 8px 0;
+    padding: 8px;
+}
+
+.promises .Panel--tm-white .Panel__in,
+.promises .Panel--tm-white::after,
+.promises > .Panel__in{
+    background: rgb(237, 238, 240);
 }
