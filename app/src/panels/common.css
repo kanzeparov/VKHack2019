@@ -5,3 +5,20 @@
 .Group--ios {
     margin: 0;
 }
+
+.Div--ios {
+    padding: 0;
+}
+
+.Tabs--ios.Tabs--default.Tabs--header {
+    padding-top: 0;
+}
+
+.Tabs--ios.Tabs--default .TabsItem:first-child,
+.Tabs--ios.Tabs--default .TabsItem:last-child {
+    border-radius: 0;
+}
+
+.Header__content {
+    z-index: 5;
+}
