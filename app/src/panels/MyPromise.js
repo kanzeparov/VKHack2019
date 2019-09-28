@@ -10,7 +10,7 @@ class MyPromiseLayout extends React.Component {
 
     render() {
         return (
-            <Panel style={{padding: 8}} theme='white'>
+            <Panel theme="white">
                 <Group title="Основные параметры">
                     <InfoRow className="base-layout-item" title="Описание обещания">
                         <div className='info-block'>

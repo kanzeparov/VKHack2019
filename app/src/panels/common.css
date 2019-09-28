@@ -12,6 +12,7 @@
 
 .Div--ios {
     padding: 0;
+    width: 100%;
 }
 
 .Tabs--ios.Tabs--default.Tabs--header {
@@ -42,4 +43,8 @@
 .List .Cell {
     background: white;
     margin-bottom: 8px;
+}
+
+.Cell--ios .Cell__in {
+
 }
