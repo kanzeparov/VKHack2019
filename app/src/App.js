@@ -60,7 +60,7 @@ const App = () => {
 
     return (
         <View theme="brand" header={false} popout={popout} activePanel="tabs">
-            <Div theme="band" id="tabs">
+            <Panel theme="white" id="tabs">
                 <Div>
                     <Home id='home' fetchedUser={fetchedUser} go={go}/>
                 </Div>
@@ -81,11 +81,11 @@ const App = () => {
                         </Tabs>
                     </Panel>
 
-                <Div style={{position: 'relative'}}>
+                <Div>
                     {getActiveTab()}
                 </Div>
 
-            </Div>
+            </Panel>
         </View>
     );
 };
