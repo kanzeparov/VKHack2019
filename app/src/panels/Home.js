@@ -7,7 +7,7 @@ import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import "./common.css"
 
 const Home = ({id, go, fetchedUser}) => (
-    <Panel theme="light" style={{padding: 0}} id="home">
+    <Panel theme="white" style={{padding: 0}} id="home">
         {fetchedUser &&
         <Group title="Пользователь">
             <Cell

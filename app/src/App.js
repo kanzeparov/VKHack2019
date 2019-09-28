@@ -4,9 +4,10 @@ import View from '@vkontakte/vkui/dist/components/View/View';
 import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
 import '@vkontakte/vkui/dist/vkui.css';
 import PromiseLayout from './panels/Promise'
-import {Div, Panel, Tabs, TabsItem, Group} from '@vkontakte/vkui'
+import {Div, Panel, Tabs, TabsItem, Group, PanelHeader, HorizontalScroll} from '@vkontakte/vkui'
 import Home from "./panels/Home";
 import "./panels/common.css"
+import MyPromiseLayout from "./panels/MyPromise";
 
 
 const App = () => {
@@ -46,15 +47,13 @@ const App = () => {
         }
 
         if (activeTab === 1) {
-            return <Div>
-                <Group title="Мои обещания" theme="light">
-                    Мои обещания
-                </Group>
-            </Div>
+            return <Group theme="white" style={{paddingLeft: 8, paddingTop: 0}} title="Мои обещания">
+                <MyPromiseLayout/>
+            </Group>
         }
 
         if (activeTab === 2) {
-            return <Group title="Обещания друзей" theme="light">
+            return <Group title="Обещания друзей" theme="white">
                 Обещания
             </Group>
         }
@@ -63,15 +62,14 @@ const App = () => {
     const header = false;
 
     return (
-        <View theme="light" header={false} popout={popout} activePanel="tabs">
+        <View theme="white" header={false} popout={popout} activePanel="tabs">
             <Panel id="tabs">
                 <Div>
                     <Home id='home' fetchedUser={fetchedUser} go={go}/>
                 </Div>
-
-				<Div style={{position: 'relative'}}>
-                    <Panel theme="light">
-                        <Tabs theme="header" type="default">
+                    <Panel theme="white">
+                        <Tabs theme="white" type="buttons">
+                            <HorizontalScroll>
                             <TabsItem onClick={() => {setActiveTab(0)}} selected={activeTab === 0}>
                                 Главная
                             </TabsItem>
@@ -81,9 +79,10 @@ const App = () => {
                             <TabsItem onClick={() => {setActiveTab(2)}} selected={activeTab === 2}>
                                 Обещания друзей
                             </TabsItem>
+
+                        </HorizontalScroll>
                         </Tabs>
                     </Panel>
-				</Div>
 
 				{getActiveTab()}
 

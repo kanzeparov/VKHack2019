@@ -1,0 +1,29 @@
+.base-layout {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    --background_page: white;
+    justify-content: space-around;
+}
+
+.base-layout-item {
+    position: relative;
+    display: flex;
+    background-color: white;
+    --background_page: white;
+    padding-top: 16px;
+}
+
+.info-block {
+    margin-left: 54px;
+}
+
+.base-layout-item .InfoRow__title {
+    margin-left: 12px;
+    min-width: 180px;
+}
+
+.base-layout-item-label {
+    width: 49%;
+}

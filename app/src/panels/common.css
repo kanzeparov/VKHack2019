@@ -6,12 +6,20 @@
     margin: 0;
 }
 
+.Group--ios::before, .Group--ios::after {
+    display: none;
+}
+
 .Div--ios {
     padding: 0;
 }
 
 .Tabs--ios.Tabs--default.Tabs--header {
     padding-top: 0;
+}
+
+.Tabs {
+    background-color: grey;
 }
 
 .Tabs--ios.Tabs--default .TabsItem:first-child,
@@ -21,4 +29,8 @@
 
 .Header__content {
     z-index: 5;
+}
+
+.FormLayout--ios .FormLayout__row .Checkbox:first-child {
+    margin-top: 0;
 }
