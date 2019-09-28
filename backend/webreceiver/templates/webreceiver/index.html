@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reports</title>
+  <link rel="stylesheet" href="/static/webreceiver/css/bulma.css" />
+  <link rel="stylesheet" href="/static/webreceiver/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/webreceiver/css/toggle.css">
+  <script
+  src="/static/webreceiver/js/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script src="/static/webreceiver/js/sorttable.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+  .fix-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+}
+</style>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Data
+      </h1>
+      <h2 class="subtitle">
+        Results list
+      </h2>
+    </div>
+  </div>
+</section>
+
+<div class='section'>
+<div class='container'>
+{% if user_list %}
+  <table class="table is-bordered is-striped is-fullwidth sortable">
+      <tr>
+        <th>User ID</th>
+        <th>Promise ID</th>
+      </tr>
+      {% for user in user_list %}
+      <tr>
+        <td><p>{{ user.userid }}</p></td>
+        <td><p>{{ user.promises }}</p></td>
+       </tr>
+      {% endfor %}
+    </table>
+
+<div class="modal is-not-active">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Report details</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+    </section>
+    <footer class="modal-card-foot"></footer>
+  </div>
+</div>
+{% else %}
+  <div class="empty">
+    <div class="empty-icon">
+      <i class="icon icon-people"></i>
+    </div>
+    <p class="empty-title h5">No users added</p>
+  </div>
+{% endif %}
+</div>
+</div>
+
+<footer class="footer not-fix-footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        The source code is licensed by Proper4.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
