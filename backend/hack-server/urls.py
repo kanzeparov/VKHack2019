@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webreceiver.views import index, submituser, load, submitpromise, submitpayment
+from webreceiver.views import index, submituser, submitpromise, submitpayment, getpromises, getprombyusers
 
 urlpatterns = [
     path('submitpayment', submitpayment, name='submitpayment'),
     path('submitpromise', submitpromise, name='submitpromise'),
     path('submituser', submituser, name='submituser'),
     path('', index, name='index'),
-    #path('load', load, name='load'),
+    path('getpromises', getpromises, name='getpromises'),
+    path('getprombyusers', getprombyusers, name='getprombyusers')
 ]
