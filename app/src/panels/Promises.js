@@ -10,7 +10,7 @@ class PromisesLayout extends React.Component {
 
     render() {
         return (
-        <Panel theme='white'>
+        <Panel theme='brand'>
             <List>
                 <Cell size="l" bottomContent={
                           <div style={{display: 'flex', 'justify-content': 'flex-end'}}>

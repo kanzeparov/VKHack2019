@@ -4,7 +4,7 @@ import View from '@vkontakte/vkui/dist/components/View/View';
 import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
 import '@vkontakte/vkui/dist/vkui.css';
 import PromiseLayout from './panels/Promise'
-import {Div, Panel, Tabs, TabsItem, Group, PanelHeader, HorizontalScroll} from '@vkontakte/vkui'
+import {Div, Panel, Tabs, TabsItem, Group, HorizontalScroll} from '@vkontakte/vkui'
 import Home from "./panels/Home";
 import "./panels/common.css"
 import MyPromiseLayout from "./panels/MyPromise";
@@ -42,42 +42,38 @@ const App = () => {
     function getActiveTab() {
 
         if (activeTab === 0) {
-            return <Group style={{paddingLeft: 8, paddingTop: 0}}>
-                <PromiseLayout/>
-            </Group>
+            return <PromiseLayout/>
         }
 
         if (activeTab === 1) {
-            return <Group theme="white" style={{paddingLeft: 8, paddingTop: 0}}>
-                <MyPromiseLayout/>
-            </Group>
+            return <MyPromiseLayout/>
+
         }
 
         if (activeTab === 2) {
-            return <Group theme="white">
-                <PromisesLayout/>
-            </Group>
+            return <PromisesLayout/>
+
         }
     }
 
     const header = false;
 
     return (
-        <View theme="white" header={false} popout={popout} activePanel="tabs">
-            <Panel id="tabs">
+        <View theme="brand" header={false} popout={popout} activePanel="tabs">
+            <Div theme="band" id="tabs">
                 <Div>
                     <Home id='home' fetchedUser={fetchedUser} go={go}/>
                 </Div>
                     <Panel theme="white">
-                        <Tabs theme="white" type="buttons">
+                        <Tabs theme="header" type="buttons">
                             <HorizontalScroll>
-                            <TabsItem onClick={() => {setActiveTab(0)}} selected={activeTab === 0}>
+                            <TabsItem style={{cursor: 'pointer'}} onClick={() => {setActiveTab(0)}} selected={activeTab === 0}>
                                 Главная
                             </TabsItem>
-                            <TabsItem onClick={() => {setActiveTab(1)}} selected={activeTab === 1}>
+                            <TabsItem style={{cursor: 'pointer'}} onClick={() => {setActiveTab(1)}} selected={activeTab === 1}>
                                 Мои обещания
                             </TabsItem>
-                            <TabsItem onClick={() => {setActiveTab(2)}} selected={activeTab === 2}>
+                            <TabsItem style={{cursor: 'pointer'}} onClick={() => {setActiveTab(2)}} selected={activeTab === 2}>
                                 Обещания
                             </TabsItem>
 
@@ -85,10 +81,11 @@ const App = () => {
                         </Tabs>
                     </Panel>
 
-				{getActiveTab()}
+                <Div style={{position: 'relative'}}>
+                    {getActiveTab()}
+                </Div>
 
-
-            </Panel>
+            </Div>
         </View>
     );
 };

@@ -4,7 +4,7 @@ import FormLayout from "@vkontakte/vkui/dist/components/FormLayout/FormLayout";
 import Select from "@vkontakte/vkui/dist/components/Select/Select";
 import Checkbox from "@vkontakte/vkui/dist/components/Checkbox/Checkbox";
 import Button from "@vkontakte/vkui/dist/components/Button/Button";
-import {Panel, Tooltip} from '@vkontakte/vkui'
+import {Panel, Tooltip, Separator} from '@vkontakte/vkui'
 
 class PromiseLayout extends React.Component {
     constructor(props) {
@@ -31,6 +31,9 @@ class PromiseLayout extends React.Component {
                                   top="Представь публично свой challendge. (Чем глобальнее цель, тем больше поддержки)"
                                   placeholder="Обещание"/>
                     </Tooltip>
+
+                    <Separator style={{ margin: '12px 0' }} />
+
                     <div style={{marginLeft: 12}}>По каким измеримым показателям я гарантирантирую выполнение</div>
                     <Tooltip onClose={() => {}}
                              isShown={this.state.promiseMerkTooltipShown}
@@ -41,6 +44,9 @@ class PromiseLayout extends React.Component {
                                   top="По каким измеримым показателям я гарантирантирую выполнение"
                                   placeholder="Мерки обещания"/>
                     </Tooltip>
+
+                    <Separator style={{ margin: '12px 0' }} />
+
                     <div style={{marginLeft: 12}}>Категория моего вызова:</div>
                     <Select placeholder="Категория">
                         <option value="sport">Спорт</option>
@@ -49,6 +55,8 @@ class PromiseLayout extends React.Component {
                         <option value="son">Сон</option>
                         <option value="">Вредные привычки</option>
                     </Select>
+
+                    <Separator style={{ margin: '12px 0' }} />
 
                     <div style={{marginLeft: 12}}>Где хотите опубликовать</div>
 
