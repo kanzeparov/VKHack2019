@@ -13,10 +13,14 @@
     background-color: white;
     --background_page: white;
     padding-top: 16px;
+    flex-direction: column;
+    line-height: 24px
 }
 
 .info-block {
-    margin-left: 54px;
+    margin-left: 12px;
+    font-family: var(--font-ios);
+    font-size: 14px;
 }
 
 .base-layout-item .InfoRow__title {

@@ -8,6 +8,7 @@ import {Div, Panel, Tabs, TabsItem, Group, PanelHeader, HorizontalScroll} from '
 import Home from "./panels/Home";
 import "./panels/common.css"
 import MyPromiseLayout from "./panels/MyPromise";
+import PromisesLayout from "./panels/Promises";
 
 
 const App = () => {
@@ -41,20 +42,20 @@ const App = () => {
     function getActiveTab() {
 
         if (activeTab === 0) {
-            return <Group style={{paddingLeft: 8, paddingTop: 0}} title="Главная">
+            return <Group style={{paddingLeft: 8, paddingTop: 0}}>
                 <PromiseLayout/>
             </Group>
         }
 
         if (activeTab === 1) {
-            return <Group theme="white" style={{paddingLeft: 8, paddingTop: 0}} title="Мои обещания">
+            return <Group theme="white" style={{paddingLeft: 8, paddingTop: 0}}>
                 <MyPromiseLayout/>
             </Group>
         }
 
         if (activeTab === 2) {
-            return <Group title="Обещания друзей" theme="white">
-                Обещания
+            return <Group theme="white">
+                <PromisesLayout/>
             </Group>
         }
     }
@@ -77,7 +78,7 @@ const App = () => {
                                 Мои обещания
                             </TabsItem>
                             <TabsItem onClick={() => {setActiveTab(2)}} selected={activeTab === 2}>
-                                Обещания друзей
+                                Обещания
                             </TabsItem>
 
                         </HorizontalScroll>
