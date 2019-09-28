@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webreceiver.views import index, submituser, load
+from webreceiver.views import index, submituser, load, submitpromise
 
 urlpatterns = [
+    path('submitpromise', submitpromise, name='sumitpromise'),
     path('submituser', submituser, name='submituser'),
     path('', index, name='index'),
     #path('load', load, name='load'),
