@@ -42,7 +42,7 @@ const App = () => {
     function getActiveTab() {
 
         if (activeTab === 0) {
-            return <PromiseLayout/>
+            return <PromiseLayout user={fetchedUser}/>
         }
 
         if (activeTab === 1) {
