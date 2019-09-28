@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Reports</title>
+  <title>Infographics</title>
   <link rel="stylesheet" href="/static/webreceiver/css/bulma.css" />
   <link rel="stylesheet" href="/static/webreceiver/css/font-awesome.min.css">
   <link rel="stylesheet" href="/static/webreceiver/css/toggle.css">
@@ -25,27 +25,74 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Data
+        Accumulated data
       </h1>
-      <h2 class="subtitle">
-        Results list
-      </h2>
     </div>
   </div>
 </section>
 
 <div class='section'>
 <div class='container'>
-{% if user_list %}
+  <center> <div> User list </div> </center>
   <table class="table is-bordered is-striped is-fullwidth sortable">
       <tr>
         <th>User ID</th>
         <th>Promise ID</th>
+        <th>Debted</th>
+        <th>Paid</th>
       </tr>
       {% for user in user_list %}
       <tr>
         <td><p>{{ user.userid }}</p></td>
         <td><p>{{ user.promises }}</p></td>
+        <td><p>{{ user.debted }}</p></td>
+        <td><p>{{ user.paid }}</p></td>
+       </tr>
+      {% endfor %}
+    </table>
+  
+  <center> <div> Promise list </div> </center>
+  <table class="table is-bordered is-striped is-fullwidth sortable">
+      <tr>
+        <th>Promise ID</th>
+        <th>Description</th>
+        <th>Metrics</th>
+        <th>Category</th>
+        <th>Wallpub</th>
+        <th>Storypub</th>
+        <th>Expdate</th>
+        <th>Issuedate</th>
+        <th>Transactions</th>
+      </tr>
+      {% for promise in promise_list %}
+      <tr>
+        <td><p>{{ promise.promiseid }}</p></td>
+        <td><p>{{ promise.description }}</p></td>
+        <td><p>{{ promise.metrics }}</p></td>
+        <td><p>{{ promise.category }}</p></td>
+        <td><p>{{ promise.wall_pub }}</p></td>
+        <td><p>{{ promise.story_pub }}</p></td>
+        <td><p>{{ promise.exp_date }}</p></td>
+        <td><p>{{ promise.pub_date }}</p></td>
+        <td><p>{{ promise.transactions }}</p></td>
+       </tr>
+      {% endfor %}
+    </table>
+
+  <center> <div> Payment list </div> </center>
+  <table class="table is-bordered is-striped is-fullwidth sortable">
+      <tr>
+        <th>Payment ID</th>
+        <th>Sender</th>
+        <th>Receiver</th>
+        <th>Amount</th>
+      </tr>
+      {% for payment in payment_list %}
+      <tr>
+        <td><p>{{ payment.paymentid }}</p></td>
+        <td><p>{{ payment.sender }}</p></td>
+        <td><p>{{ payment.receiver }}</p></td>
+        <td><p>{{ payment.amount }}</p></td>
        </tr>
       {% endfor %}
     </table>
@@ -62,26 +109,8 @@
     <footer class="modal-card-foot"></footer>
   </div>
 </div>
-{% else %}
-  <div class="empty">
-    <div class="empty-icon">
-      <i class="icon icon-people"></i>
-    </div>
-    <p class="empty-title h5">No users added</p>
-  </div>
-{% endif %}
 </div>
 </div>
-
-<footer class="footer not-fix-footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        The source code is licensed by Proper4.
-      </p>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>

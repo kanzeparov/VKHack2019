@@ -12,13 +12,14 @@ class Users(models.Model):
 
 class Promises(models.Model):
         promiseid = models.TextField(default="", primary_key=True)
+        userid = models.BigIntegerField(default=0)
         description = models.TextField(default="")
         metrics = models.TextField(default="")
         category = models.IntegerField(default=0)
         wall_pub = models.BooleanField(default=False)
         story_pub = models.BooleanField(default=False)
-        exp_date = models.DateTimeField(default=timezone.now)
-        pub_date = models.DateTimeField(default=timezone.now)
+        exp_date = models.BigIntegerField(default=0)
+        pub_date = models.BigIntegerField(default=0)
         transactions = ArrayField(models.TextField(default=""))
         
 class Payments(models.Model):
