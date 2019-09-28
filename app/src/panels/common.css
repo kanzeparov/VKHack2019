@@ -34,3 +34,12 @@
 .FormLayout--ios .FormLayout__row .Checkbox:first-child {
     margin-top: 0;
 }
+
+.List .Cell--ios:not(:last-child) .Cell__in:not(.Tappable--active) .Cell__before::before {
+    display: none;
+}
+
+.List .Cell {
+    background: white;
+    margin-bottom: 8px;
+}

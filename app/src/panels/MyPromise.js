@@ -1,5 +1,5 @@
 import React from 'react';
-import {Panel, InfoRow, Group, UsersStack} from '@vkontakte/vkui'
+import {Panel, InfoRow, Group, UsersStack, Separator} from '@vkontakte/vkui'
 import './MyPromise.css'
 import Button from "@vkontakte/vkui/dist/components/Button/Button";
 
@@ -10,7 +10,7 @@ class MyPromiseLayout extends React.Component {
 
     render() {
         return (
-            <Panel theme='white'>
+            <Panel style={{padding: 8}} theme='white'>
                 <Group title="Основные параметры">
                     <InfoRow className="base-layout-item" title="Описание обещания">
                         <div className='info-block'>
@@ -23,6 +23,8 @@ class MyPromiseLayout extends React.Component {
                         </div>
                     </InfoRow>
                 </Group>
+
+                <Separator style={{ margin: '12px 0' }} />
 
                 <Group style={{marginTop: 12}} title="В вас верят">
                     <UsersStack
@@ -39,6 +41,8 @@ class MyPromiseLayout extends React.Component {
                         vertical
                     >Алексей, Илья, Михаил<br/>и ещё 3 человека</UsersStack>
                 </Group>
+
+                <Separator style={{ margin: '12px 0' }} />
 
                 <Button style={{marginTop: 12}} size='xl'>Загрузить доказательство</Button>
                 <Button onClick={() => {
