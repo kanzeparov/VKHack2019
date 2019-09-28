@@ -24,7 +24,7 @@ class MyPromiseLayout extends React.Component {
                     </InfoRow>
                 </Group>
 
-                <Separator style={{ margin: '12px 0' }} />
+                <Separator style={{margin: '12px 0'}}/>
 
                 <Group style={{marginTop: 12}} title="В вас верят">
                     <UsersStack
@@ -42,7 +42,7 @@ class MyPromiseLayout extends React.Component {
                     >Алексей, Илья, Михаил<br/>и ещё 3 человека</UsersStack>
                 </Group>
 
-                <Separator style={{ margin: '12px 0' }} />
+                <Separator style={{margin: '12px 0'}}/>
 
                 <Button style={{marginTop: 12}} size='xl'>Загрузить доказательство</Button>
                 <Button onClick={() => {

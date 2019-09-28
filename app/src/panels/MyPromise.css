@@ -14,13 +14,30 @@
     --background_page: white;
     padding-top: 16px;
     flex-direction: column;
-    line-height: 24px
+    line-height: 24px;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    max-width: 90%;
 }
 
 .info-block {
     margin-left: 12px;
-    font-family: var(--font-ios);
-    font-size: 14px;
+    display: block;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    max-width: 90%;
+}
+
+.base-layout-item:nth-child(2) {
+    display: block;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
 }
 
 .base-layout-item .InfoRow__title {
@@ -30,4 +47,11 @@
 
 .base-layout-item-label {
     width: 49%;
+}
+
+.InfoRow .InfoRow--ios .base-layout-item > div {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }

@@ -46,12 +46,12 @@ const App = () => {
         }
 
         if (activeTab === 1) {
-            return <MyPromiseLayout/>
+            return <MyPromiseLayout user={fetchedUser}/>
 
         }
 
         if (activeTab === 2) {
-            return <PromisesLayout/>
+            return <PromisesLayout user={fetchedUser}/>
 
         }
     }

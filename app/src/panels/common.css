@@ -32,19 +32,24 @@
     z-index: 5;
 }
 
-.FormLayout--ios .FormLayout__row .Checkbox:first-child {
-    margin-top: 0;
+.FormLayout--ios .FormLayout__row .Checkbox:first-child, .FormLayout--ios .FormLayout__row .Radio:first-child, .FormLayout--ios .FormLayout__row .Cell:first-child, .FormLayout--ios .FormLayout__row .CellButton:first-child {
+    margin-top: 1px;
+}
+
+.FormLayout--ios .FormLayout__row .Checkbox:last-child, .FormLayout--ios .FormLayout__row .Radio:last-child, .FormLayout--ios .FormLayout__row .Cell:last-child, .FormLayout--ios .FormLayout__row .CellButton:last-child {
+    margin-bottom: 0;
 }
 
 .List .Cell--ios:not(:last-child) .Cell__in:not(.Tappable--active) .Cell__before::before {
     display: none;
 }
 
+.InfoRow__title div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .List .Cell {
     background: white;
     margin-bottom: 8px;
-}
-
-.Cell--ios .Cell__in {
-
 }

@@ -76,7 +76,7 @@ class PromiseLayout extends React.Component {
 
                     <div style={{marginLeft: 12}}>Где хотите опубликовать</div>
 
-                    <div style={{display: 'flex'}}>
+                    <div style={{display: 'flex', 'align-items': 'center'}}>
                         <Checkbox onChange={(event) => {this.changeWallState(event)}}>На стене</Checkbox>
                         <Checkbox onChange={(event) => {this.changeStoriesState(event)}}>В сторис</Checkbox>
                     </div>
@@ -125,8 +125,6 @@ class PromiseLayout extends React.Component {
             .then(() => {})
             .catch(() => {})
     }
-
-
 }
 
 
