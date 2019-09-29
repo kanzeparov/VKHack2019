@@ -23,89 +23,33 @@ class PromisesLayout extends React.Component {
         return (
             <Panel>
                 <List theme="white">
-                    <Group bottomContent={
+                    <Group size="l" style={{marginBottom: 8}}>
+                        <InfoRow className="base-layout-item" title="Описание обещания">
+                                Я обещаю сбросить вес, мой текущий вес
+                        </InfoRow>
+                        <InfoRow className="base-layout-item" title="Цель">
+                                Похудеть на 10 кг
+                        </InfoRow>
+                        <InfoRow className="base-layout-item" title="Категория">
+                                Вес
+                        </InfoRow>
                         <div style={{display: 'flex', 'justify-content': 'flex-end'}}>
                             <Button size="m">Оплатить</Button>
                         </div>
-                    }>
-                        <InfoRow className="base-layout-item" title="Описание обещания">
-                            <div className='info-block'>
-                                Я обещаю сбросить вес, мой текущий вес
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Цель">
-                            <div className='info-block'>
-                                Похудеть на 10 кг
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Категория">
-                            <div className='info-block'>
-                                Вес
-                            </div>
-                        </InfoRow>
                     </Group>
-                    <Group bottomContent={
+                    <Group style={{marginBottom: 8}}>
+                        <InfoRow className="base-layout-item" title="Описание обещания">
+                            Я обещаю сбросить вес, мой текущий вес
+                        </InfoRow>
+                        <InfoRow className="base-layout-item" title="Цель">
+                            Похудеть на 10 кг
+                        </InfoRow>
+                        <InfoRow className="base-layout-item" title="Категория">
+                            Вес
+                        </InfoRow>
                         <div style={{display: 'flex', 'justify-content': 'flex-end'}}>
                             <Button size="m">Оплатить</Button>
                         </div>
-                    }>
-                        <InfoRow className="base-layout-item" title="Описание обещания">
-                            <div className='info-block'>
-                                Я обещаю сбросить вес, мой текущий вес
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Цель">
-                            <div className='info-block'>
-                                Похудеть на 10 кг
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Категория">
-                            <div className='info-block'>
-                                Вес
-                            </div>
-                        </InfoRow>
-                    </Group>
-                    <Group bottomContent={
-                        <div style={{display: 'flex', 'justify-content': 'flex-end'}}>
-                            <Button size="m">Оплатить</Button>
-                        </div>
-                    }>
-                        <InfoRow className="base-layout-item" title="Описание обещания">
-                            <div className='info-block'>
-                                Я обещаю сбросить вес, мой текущий вес
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Цель">
-                            <div className='info-block'>
-                                Похудеть на 10 кг
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Категория">
-                            <div className='info-block'>
-                                Вес
-                            </div>
-                        </InfoRow>
-                    </Group>
-                    <Group bottomContent={
-                        <div style={{display: 'flex', 'justify-content': 'flex-end'}}>
-                            <Button size="m">Оплатить</Button>
-                        </div>
-                    }>
-                        <InfoRow className="base-layout-item" title="Описание обещания">
-                            <div className='info-block'>
-                                Я обещаю сбросить вес, мой текущий вес
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Цель">
-                            <div className='info-block'>
-                                Похудеть на 10 кг
-                            </div>
-                        </InfoRow>
-                        <InfoRow className="base-layout-item" title="Категория">
-                            <div className='info-block'>
-                                Вес
-                            </div>
-                        </InfoRow>
                     </Group>
                 </List>
             </Panel>)

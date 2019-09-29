@@ -13,14 +13,10 @@ class MyPromiseLayout extends React.Component {
             <Panel theme="white">
                 <Group title="Основные параметры">
                     <InfoRow className="base-layout-item" title="Описание обещания">
-                        <div className='info-block'>
-                            Я обещаю сбросить вес, мой текущий вес
-                        </div>
+                        Я обещаю сбросить вес, мой текущий вес
                     </InfoRow>
                     <InfoRow className="base-layout-item" title="Цель">
-                        <div className='info-block'>
-                            Похудеть на 10 кг
-                        </div>
+                        Похудеть на 10 кг
                     </InfoRow>
                 </Group>
 
@@ -42,12 +38,7 @@ class MyPromiseLayout extends React.Component {
                     >Алексей, Илья, Михаил<br/>и ещё 3 человека</UsersStack>
                 </Group>
 
-                <Separator style={{margin: '12px 0'}}/>
-
                 <Button style={{marginTop: 12}} size='xl'>Загрузить доказательство</Button>
-                <Button onClick={() => {
-                    createPaymentWidget()
-                }} style={{marginTop: 12}} size='xl' level="secondary">Отправить деньги друзьям</Button>
             </Panel>
         )
     }

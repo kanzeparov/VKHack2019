@@ -32,16 +32,7 @@
     max-width: 90%;
 }
 
-.base-layout-item:nth-child(2) {
-    display: block;
-    flex-wrap: wrap;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    text-overflow: ellipsis;
-}
-
 .base-layout-item .InfoRow__title {
-    margin-left: 12px;
     min-width: 180px;
 }
 
