@@ -8,3 +8,11 @@
 .promises > .Panel__in{
     background: rgb(237, 238, 240);
 }
+
+.user-cell .Cell__in {
+    padding: 0;
+}
+
+.user-cell.Cell {
+    margin-bottom: 0;
+}
