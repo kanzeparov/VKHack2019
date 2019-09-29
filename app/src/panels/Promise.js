@@ -24,7 +24,8 @@ class PromiseLayout extends React.Component {
                 story_pub: false,
                 exp_date: 0,
                 pub_date: 0,
-                transactions: []
+                transactions: [],
+                image: null
             }
         }
     }
@@ -88,7 +89,7 @@ class PromiseLayout extends React.Component {
                     <Select onChange={(event) => {this.changeCategory(event)}}>
                         <option value="0">День</option>
                         <option value="1">Неделя</option>
-                        <option value="2">Месц</option>
+                        <option value="2">Месяц</option>
                     </Select>
 
                     <Button onClick={() => {this.sendPayment()}} size="xl">Создать обещание</Button>
@@ -128,15 +129,14 @@ class PromiseLayout extends React.Component {
 
     sendPayment() {
         const info = this.state.promise;
-        const https = require('https');
 
         info.userid = this.props.user.id;
+        info.usercity = this.props.user.city.title
+        info.userphoto = this.props.user.photo_200
+        info.username = this.props.user.first_name
+        info.usersurname = this.props.user.last_name
 
-        const agent = new https.Agent({
-            rejectUnauthorized: false
-        });
-
-        axios.post(config.api + '/submitpromise', info, { httpsAgent: agent })
+        axios.post(config.api + '/submitpromise', info)
             .then(() => {
                 connect.send("VKWebAppShowWallPostBox", {"message": getPostContent(info), attachment: getAttachment(info)});
             })
@@ -151,7 +151,7 @@ const getPostContent = (promise) => {
         ${promise.metrics}
         Обязуюсь выполнить описанный challenge в течение 
         Призываю всех помочь создать для меня дополнительный стимул довести дело до конца.
-        Для отслеживания прогресса и поддержки меня, переходи по ссылке:`
+        Для отслеживания прогресса и поддержки меня, переходи по ссылке: https://vk.com/app7150625_99230836`
 };
 
 const getAttachment = (promise) => {
@@ -167,7 +167,7 @@ const getAttachment = (promise) => {
         case '4':
             return 'photo34917303_457242572';
         case '5':
-            return 'hoto34917303_457242575';
+            return 'photo34917303_457242575';
     }
 }
 

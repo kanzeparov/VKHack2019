@@ -1,3 +1,3 @@
 export const config = {
-    api: 'https://4cd63695.ngrok.io'
+    api: 'https://demo146.foxtrot.vkhackathon.com'
 };

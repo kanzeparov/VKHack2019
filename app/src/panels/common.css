@@ -57,3 +57,8 @@
 .Group__content {
     padding: 0 12px 12px;
 }
+
+img {
+    max-width: 50%;
+    height: auto;
+}
