@@ -42,16 +42,22 @@ VKHackathon 2019 in Saint Petersburg ♥
 
 # Установка
 
-Requirements:
-1. rustc 1.39.0-nightly (97e58c0d3 2019-09-20)
-2. exonum
-3. fantom
+запуск БД:
+cd backend/
+Очистка кеша Django
+1. rm -rf ./webreceiver/migrations/
+Создание пользователья и базы данных
+2. sudo -u postgres psql -f ./create_db.sql
+Создание таблиц, описанных в models.py
+3. python ./manage.py makemigrations webreceiver
+4. python ./manage.py migrate webreceiver
+5. python ./manage.py migrate
+Запуск базы данных
+6. python ./manage.py runserver 0.0.0.0:8080
 
-For running nodes on your local machine
-1. cd backend
-2. cargo insstall --path .
-3. ./launch.sh %number of nodes%
-4. Open a browser at address stated in terminal
+запуск VK mini apps:
+1. npm install
+2. npm start
 
 # Команда
 
