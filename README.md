@@ -13,38 +13,35 @@ VKHackathon 2019 in Saint Petersburg ♥
 <li> <a href="https://github.com/kanzeparov/VKHack2019#механика">Механика</a>
 <li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Техническая архитектура</a>
 <li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Демо</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Установка</a>  
 <li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Команда</a>
 </ol>
 
 
+# Проблема
+
+![N|Solid](image/5.png)
+
 # Решение
 
+![N|Solid](image/6.png)
 
-# Exonum blockchain
+# Механика
 
-Exonum provides a reliable blockchain creation framework, that can be used as in our example.
-We start several nodes which log information into log files. 
+![N|Solid](image/7.png)
+![N|Solid](image/8.png) 
+![N|Solid](image/9.png)
 
-Our next stage code process the information from logs and generate svg files.
+# Техническая архитектура
 
-Exonum shows good performance on a local machine with nodes communication over localhost network.
+![N|Solid](image/10.png) 
 
-TPS is several hundred transactions for small number of nodes. 
-Consensus time is about 0.01 seconds for small number of nodes.
+# Демо
 
-# Fantom blockchain
-
-Fantom blockchain can be easily configured for interaction with our svg-generation code.
-
-The timestamped transaction information needs to be logged in files which then will be processed to generate svg.
-
-![N|Solid](image/svg.png)
-
-# Blockchain comparison
-
-At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. 
+![N|Solid](image/11.png) 
 
 # Установка
+
 Requirements:
 1. rustc 1.39.0-nightly (97e58c0d3 2019-09-20)
 2. exonum
@@ -55,18 +52,6 @@ For running nodes on your local machine
 2. cargo insstall --path .
 3. ./launch.sh %number of nodes%
 4. Open a browser at address stated in terminal
-
-
-# Итого
-
-**TrustMe** is a complete complete product for checking the main indicators of the blockchain
-
-<a href="https://www.youtube.com/watch?v=-3xvlPHu1Rg&feature=youtu.be">Video-presentation of the TrustMe</a>
-
-![N|Solid](image/Screenshot.png)
-
-
-We implemented all this within the framework of the hackathon CryptoBazar Serial Hacking with the active interaction of the whole team!
 
 # Команда
 
