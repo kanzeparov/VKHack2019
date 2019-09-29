@@ -13,6 +13,10 @@ class Users(models.Model):
 class Promises(models.Model):
         promiseid = models.TextField(default="", primary_key=True)
         userid = models.BigIntegerField(default=0)
+        usercity = models.TextField(default="")
+        userphoto = models.TextField(default="")
+        username = models.TextField(default="")
+        usersurname = models.TextField(default="")
         description = models.TextField(default="")
         metrics = models.TextField(default="")
         category = models.IntegerField(default=0)
@@ -21,9 +25,11 @@ class Promises(models.Model):
         exp_date = models.BigIntegerField(default=0)
         pub_date = models.BigIntegerField(default=0)
         transactions = ArrayField(models.TextField(default=""))
+        image = models.TextField(default="")
         
 class Payments(models.Model):
         paymentid = models.TextField(default="")
         sender = models.BigIntegerField(default=0)
         promiseid = models.TextField(default="")
         amount = models.BigIntegerField(default=0)
+        photo = models.TextField(default="")
