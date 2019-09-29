@@ -11,34 +11,34 @@ VKHackathon 2019 in Saint Petersburg ♥
 <li> <a href="https://github.com/kanzeparov/VKHack2019#проблема">Проблема</a>
 <li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Решение</a>
 <li> <a href="https://github.com/kanzeparov/VKHack2019#механика">Механика</a>
-<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Техническая архитектура</a>
-<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Демо</a>
-<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Установка</a>  
+<li> <a href="https://github.com/kanzeparov/VKHack2019#техническая-архитектура">Техническая архитектура</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#демо">Демо</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#установка">Установка</a>  
 <li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Команда</a>
 </ol>
 
 
 # Проблема
 
-![N|Solid](image/5.png)
+![N|Solid](images/5.png)
 
 # Решение
 
-![N|Solid](image/6.png)
+![N|Solid](images/6.png)
 
 # Механика
 
-![N|Solid](image/7.png)
-![N|Solid](image/8.png) 
-![N|Solid](image/9.png)
+![N|Solid](images/7.png)
+![N|Solid](images/8.png) 
+![N|Solid](images/9.png)
 
 # Техническая архитектура
 
-![N|Solid](image/10.png) 
+![N|Solid](images/10.png) 
 
 # Демо
 
-![N|Solid](image/11.png) 
+![N|Solid](images/11.png) 
 
 # Установка
 
