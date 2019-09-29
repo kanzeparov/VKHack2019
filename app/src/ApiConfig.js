@@ -1,3 +1,3 @@
 export const config = {
-    api: 'https://35.224.129.238'
+    api: 'https://4cd63695.ngrok.io'
 };

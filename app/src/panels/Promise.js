@@ -4,9 +4,10 @@ import FormLayout from "@vkontakte/vkui/dist/components/FormLayout/FormLayout";
 import Select from "@vkontakte/vkui/dist/components/Select/Select";
 import Checkbox from "@vkontakte/vkui/dist/components/Checkbox/Checkbox";
 import Button from "@vkontakte/vkui/dist/components/Button/Button";
-import {Panel, Tooltip, Separator, Input} from '@vkontakte/vkui'
+import {Panel, Tooltip, Separator} from '@vkontakte/vkui'
 import axios from 'axios';
 import {config} from '../ApiConfig'
+import connect from '@vkontakte/vk-connect';
 
 class PromiseLayout extends React.Component {
     constructor(props) {
@@ -55,15 +56,14 @@ class PromiseLayout extends React.Component {
                         <Textarea onChange={(event) => {this.changeMetrics(event)}}
                                   onFocus={() => {this.setState({...this.state, promiseMerkTooltipShown: true})}}
                                   onBlur={() => {this.setState({...this.state, promiseMerkTooltipShown: false})}}
-                                  top="По каким измеримым показателям я гарантирантирую выполнение"
-                                  placeholder="Мерки обещания"/>
+                                  top="По каким измеримым показателям я гарантирантирую выполнение"/>
                     </Tooltip>
 
                     <Separator style={{ margin: '0' }} />
 
                     <div style={{marginLeft: 12}}>Категория моего вызова:</div>
 
-                    <Select onChange={(event) => {this.changeCategory(event)}} placeholder="Категория">
+                    <Select onChange={(event) => {this.changeCategory(event)}}>
                         <option value="0">Спорт</option>
                         <option value="1">Питание</option>
                         <option value="2">Вес</option>
@@ -85,7 +85,7 @@ class PromiseLayout extends React.Component {
 
                     <div style={{marginLeft: 12}}>В течение какого времени будет выполнено</div>
 
-                    <Select onChange={(event) => {this.changeCategory(event)}} placeholder="Дата">
+                    <Select onChange={(event) => {this.changeCategory(event)}}>
                         <option value="0">День</option>
                         <option value="1">Неделя</option>
                         <option value="2">Месц</option>
@@ -128,14 +128,47 @@ class PromiseLayout extends React.Component {
 
     sendPayment() {
         const info = this.state.promise;
+        const https = require('https');
 
         info.userid = this.props.user.id;
 
-        axios.post(config.api + '/submitpromise', info)
-            .then(() => {})
+        const agent = new https.Agent({
+            rejectUnauthorized: false
+        });
+
+        axios.post(config.api + '/submitpromise', info, { httpsAgent: agent })
+            .then(() => {
+                connect.send("VKWebAppShowWallPostBox", {"message": getPostContent(info), attachment: getAttachment(info)});
+            })
             .catch(() => {})
     }
 }
 
+const getPostContent = (promise) => {
+    return `Я бросаю себе вызов с целью улучшить свое здоровье, а также внести пожертвования в благотворительный фонд ОРБИ.
+        ${promise.description}
+        В качестве доказательства выполнения:
+        ${promise.metrics}
+        Обязуюсь выполнить описанный challenge в течение 
+        Призываю всех помочь создать для меня дополнительный стимул довести дело до конца.
+        Для отслеживания прогресса и поддержки меня, переходи по ссылке:`
+};
+
+const getAttachment = (promise) => {
+    switch (promise.category) {
+        case '0':
+            return 'photo34917303_457242571';
+        case '1':
+            return 'photo34917303_457242574';
+        case '2':
+            return 'photo34917303_457242573';
+        case '3':
+            return 'photo34917303_457242576';
+        case '4':
+            return 'photo34917303_457242572';
+        case '5':
+            return 'hoto34917303_457242575';
+    }
+}
 
 export default PromiseLayout
