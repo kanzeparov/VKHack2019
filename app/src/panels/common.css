@@ -53,3 +53,7 @@
     background: white;
     margin-bottom: 8px;
 }
+
+.Group__content {
+    padding: 0 12px 12px;
+}

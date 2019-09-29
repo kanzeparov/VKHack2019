@@ -1,10 +1,18 @@
 .List {
     background: rgb(237, 238, 240);
-    padding: 8px;
+    padding: 8px 0;
 }
 
 .promises .Panel--tm-white .Panel__in,
 .promises .Panel--tm-white::after,
 .promises > .Panel__in{
     background: rgb(237, 238, 240);
+}
+
+.user-cell .Cell__in {
+    padding: 0;
+}
+
+.user-cell.Cell {
+    margin-bottom: 0;
 }
