@@ -8,71 +8,69 @@ VKHackathon 2019 in Saint Petersburg ♥
 # Структура
 
 <ol type="1" style="font-size: x-large;">
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#Решение">Решение</a>
-<ol type="a" style="font-size: large;">
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#exonum-blockchain">Exonum blockchain</a>
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#fantom-blockchain">Fantom blockchain</a>
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#blockchain-comparison">Blockchain comparison</a>
-</ol>
-<li> <a href="https://github.com/AntonPecherkin/ChainMetric#Установка">Установка</a>
-<li> <a href="https://github.com/AntonPecherkin/ChainMetric#Итого">Итого</a>
-<li> <a href="https://github.com/AntonPecherkin/ChainMetric#Команда">Команда</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#проблема">Проблема</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Решение</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#механика">Механика</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#техническая-архитектура">Техническая архитектура</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#демо">Демо</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#установка">Установка</a>  
+<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Команда</a>
 </ol>
 
+
+# Проблема
+
+![N|Solid](images/5.png)
 
 # Решение
 
-We have created a project in which any user can check the performance of the blockchain on 3.5 and 20 nodes. At the moment, the project is comparing two blockchains (Fantom and Exonum). We carry out a set of transactions through the data of the blockchain and at the output we get a svg file with a comparison of key indicators of the blockchain.
+![N|Solid](images/6.png)
 
-<a href="https://www.youtube.com/watch?v=-3xvlPHu1Rg&feature=youtu.be">Video-presentation of the TrustMe</a>
+# Механика
 
-# Exonum blockchain
+![N|Solid](images/7.png)
+![N|Solid](images/8.png) 
+![N|Solid](images/9.png)
 
-Exonum provides a reliable blockchain creation framework, that can be used as in our example.
-We start several nodes which log information into log files. 
+# Техническая архитектура
 
-Our next stage code process the information from logs and generate svg files.
+![N|Solid](images/10.png) 
 
-Exonum shows good performance on a local machine with nodes communication over localhost network.
+# Демо
 
-TPS is several hundred transactions for small number of nodes. 
-Consensus time is about 0.01 seconds for small number of nodes.
-
-# Fantom blockchain
-
-Fantom blockchain can be easily configured for interaction with our svg-generation code.
-
-The timestamped transaction information needs to be logged in files which then will be processed to generate svg.
-
-![N|Solid](image/svg.png)
-
-# Blockchain comparison
-
-At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. 
+![N|Solid](images/11.png) 
 
 # Установка
-Requirements:
-1. rustc 1.39.0-nightly (97e58c0d3 2019-09-20)
-2. exonum
-3. fantom
 
-For running nodes on your local machine
-1. cd backend
-2. cargo insstall --path .
-3. ./launch.sh %number of nodes%
-4. Open a browser at address stated in terminal
+запуск БД:
 
+cd backend/
 
-# Итого
+Очистка кеша Django
 
-**TrustMe** is a complete complete product for checking the main indicators of the blockchain
+1. rm -rf ./webreceiver/migrations/
 
-<a href="https://www.youtube.com/watch?v=-3xvlPHu1Rg&feature=youtu.be">Video-presentation of the TrustMe</a>
+Создание пользователья и базы данных
 
-![N|Solid](image/Screenshot.png)
+2. sudo -u postgres psql -f ./create_db.sql
 
+Создание таблиц, описанных в models.py
 
-We implemented all this within the framework of the hackathon CryptoBazar Serial Hacking with the active interaction of the whole team!
+3. python ./manage.py makemigrations webreceiver
+
+4. python ./manage.py migrate webreceiver
+
+5. python ./manage.py migrate
+
+Запуск базы данных
+
+6. python ./manage.py runserver 0.0.0.0:8080
+
+запуск VK mini apps:
+
+1. npm install
+
+2. npm start
 
 # Команда
 
