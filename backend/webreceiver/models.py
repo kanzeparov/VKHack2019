@@ -13,6 +13,10 @@ class Users(models.Model):
 class Promises(models.Model):
         promiseid = models.TextField(default="", primary_key=True)
         userid = models.BigIntegerField(default=0)
+        usercity = models.TextField(default="")
+        userphoto = models.TextField(default="")
+        username = models.TextField(default="")
+        usersurname = models.TextField(default="")
         description = models.TextField(default="")
         metrics = models.TextField(default="")
         category = models.IntegerField(default=0)
@@ -28,3 +32,4 @@ class Payments(models.Model):
         sender = models.BigIntegerField(default=0)
         promiseid = models.TextField(default="")
         amount = models.BigIntegerField(default=0)
+        photo = models.TextField(default="")
