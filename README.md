@@ -8,23 +8,17 @@ VKHackathon 2019 in Saint Petersburg ♥
 # Структура
 
 <ol type="1" style="font-size: x-large;">
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#Решение">Решение</a>
-<ol type="a" style="font-size: large;">
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#exonum-blockchain">Exonum blockchain</a>
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#fantom-blockchain">Fantom blockchain</a>
-  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#blockchain-comparison">Blockchain comparison</a>
-</ol>
-<li> <a href="https://github.com/AntonPecherkin/ChainMetric#Установка">Установка</a>
-<li> <a href="https://github.com/AntonPecherkin/ChainMetric#Итого">Итого</a>
-<li> <a href="https://github.com/AntonPecherkin/ChainMetric#Команда">Команда</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#проблема">Проблема</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Решение</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#механика">Механика</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Техническая архитектура</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Демо</a>
+<li> <a href="https://github.com/kanzeparov/VKHack2019#решение">Команда</a>
 </ol>
 
 
 # Решение
 
-We have created a project in which any user can check the performance of the blockchain on 3.5 and 20 nodes. At the moment, the project is comparing two blockchains (Fantom and Exonum). We carry out a set of transactions through the data of the blockchain and at the output we get a svg file with a comparison of key indicators of the blockchain.
-
-<a href="https://www.youtube.com/watch?v=-3xvlPHu1Rg&feature=youtu.be">Video-presentation of the TrustMe</a>
 
 # Exonum blockchain
 
