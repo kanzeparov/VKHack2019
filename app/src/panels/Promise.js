@@ -4,7 +4,7 @@ import FormLayout from "@vkontakte/vkui/dist/components/FormLayout/FormLayout";
 import Select from "@vkontakte/vkui/dist/components/Select/Select";
 import Checkbox from "@vkontakte/vkui/dist/components/Checkbox/Checkbox";
 import Button from "@vkontakte/vkui/dist/components/Button/Button";
-import {Panel, Tooltip, Separator} from '@vkontakte/vkui'
+import {Panel, Tooltip, Separator, Input} from '@vkontakte/vkui'
 import axios from 'axios';
 import {config} from '../ApiConfig'
 
@@ -45,7 +45,7 @@ class PromiseLayout extends React.Component {
                                   placeholder="Обещание"/>
                     </Tooltip>
 
-                    <Separator style={{ margin: '12px 0' }} />
+                    <Separator style={{ margin: '0' }} />
 
                     <div style={{marginLeft: 12}}>По каким измеримым показателям я гарантирантирую выполнение</div>
                     <Tooltip onClose={() => {}}
@@ -59,7 +59,7 @@ class PromiseLayout extends React.Component {
                                   placeholder="Мерки обещания"/>
                     </Tooltip>
 
-                    <Separator style={{ margin: '12px 0' }} />
+                    <Separator style={{ margin: '0' }} />
 
                     <div style={{marginLeft: 12}}>Категория моего вызова:</div>
 
@@ -72,7 +72,7 @@ class PromiseLayout extends React.Component {
                         <option value="5">Другое</option>
                     </Select>
 
-                    <Separator style={{ margin: '12px 0' }} />
+                    <Separator style={{ margin: '0' }} />
 
                     <div style={{marginLeft: 12}}>Где хотите опубликовать</div>
 
@@ -80,6 +80,16 @@ class PromiseLayout extends React.Component {
                         <Checkbox onChange={(event) => {this.changeWallState(event)}}>На стене</Checkbox>
                         <Checkbox onChange={(event) => {this.changeStoriesState(event)}}>В сторис</Checkbox>
                     </div>
+
+                    <Separator style={{ margin: '0' }} />
+
+                    <div style={{marginLeft: 12}}>В течение какого времени будет выполнено</div>
+
+                    <Select onChange={(event) => {this.changeCategory(event)}} placeholder="Дата">
+                        <option value="0">День</option>
+                        <option value="1">Неделя</option>
+                        <option value="2">Месц</option>
+                    </Select>
 
                     <Button onClick={() => {this.sendPayment()}} size="xl">Создать обещание</Button>
                 </FormLayout>
