@@ -43,20 +43,33 @@ VKHackathon 2019 in Saint Petersburg ♥
 # Установка
 
 запуск БД:
+
 cd backend/
+
 Очистка кеша Django
+
 1. rm -rf ./webreceiver/migrations/
+
 Создание пользователья и базы данных
+
 2. sudo -u postgres psql -f ./create_db.sql
+
 Создание таблиц, описанных в models.py
+
 3. python ./manage.py makemigrations webreceiver
+
 4. python ./manage.py migrate webreceiver
+
 5. python ./manage.py migrate
+
 Запуск базы данных
+
 6. python ./manage.py runserver 0.0.0.0:8080
 
 запуск VK mini apps:
+
 1. npm install
+
 2. npm start
 
 # Команда
