@@ -78,6 +78,17 @@ def db_add_payment(paymentid, sender, promiseid, amount):
 				 pub_date=promise.pub_date, transactions=selected_transactions)
 	r.save()
 
+def submitimage(request):
+	info = json.loads(request.body)
+	promiseid = info['promiseid']
+	image = info['image']
+	promise = Promises.objects.filter(promiseid=promiseid)[0]
+	r = Promises(userid=promise.userid, promiseid=promise.promiseid, description=promise.description,
+				 metrics=promise.metrics, category=promise.category,
+				 wall_pub=promise.wall_pub, story_pub=promise.story_pub, exp_date=promise.exp_date,
+				 pub_date=promise.pub_date, transactions=promise.transactions, image=image)
+	r.save()
+
 '''
 	=================================================================
 	========================= GET REQUESTS ==========================
@@ -94,6 +105,7 @@ def getpromises(request):
 							  'story_pub': o.story_pub,
 							  'exp_date': o.exp_date,
 							  'pub_date': o.pub_date,
+							  'image' : o.image,
 							  'transactions': o.transactions}
 			   for o in objects], safe=False)
 	print(response)
@@ -116,6 +128,7 @@ def getprombyusers(request):
 							  'story_pub': o.story_pub,
 							  'exp_date': o.exp_date,
 							  'pub_date': o.pub_date,
+							  'image': o.image,
 							  'transactions': o.transactions}
 			   for o in promises], safe=False)
 	print(response)

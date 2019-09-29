@@ -21,6 +21,7 @@ class Promises(models.Model):
         exp_date = models.BigIntegerField(default=0)
         pub_date = models.BigIntegerField(default=0)
         transactions = ArrayField(models.TextField(default=""))
+        image = models.TextField(default="")
         
 class Payments(models.Model):
         paymentid = models.TextField(default="")
